@@ -7,8 +7,11 @@ class School
   end
 
   def add_student(student_name, grade)
-    roster[grade] ||= []
-    roster[grade] << student_name  #grade key points to an array
+    #roster[grade] ||= []  #a ||= b   → a ? a : a = b  if a then a else a = b end
+    if ! roster.key?(grade)
+      roster[grade] = []   #grade key points to an array
+      end
+    roster[grade] << student_name
   end
 
   def grade(student_grade)
