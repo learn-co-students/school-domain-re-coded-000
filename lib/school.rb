@@ -10,6 +10,7 @@ def add_student(name,grade)
     #roster[grade] << name
     if !roster.key?(grade)
       roster[grade] =[]
+      #roster[grade] ||= []
     end
     roster[grade] << name
 end
